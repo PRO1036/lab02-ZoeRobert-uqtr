@@ -41,23 +41,25 @@ ggplot(plastic_waste, aes(x = plastic_waste_per_cap, color = continent, fill = c
   geom_density(alpha = 0.5)
 ```
 
-Réponse à la question...
+color et fill se trouve dans aes, car ils sont directement inpactés par les variables du graphique. alpha se trouve dans geom, car il affecte l'allure générale du graphique et il n'est pas relier à une variable en particulier. 
 
 ### Exercise 3
 
 Boxplot:
 
 ```{r plastic-waste-boxplot}
-# insert code here
+ggplot(plastic_waste, aes(x = continent, y = plastic_waste_per_cap))+
+  geom_boxplot()
 ```
 
 Violin plot:
 
 ```{r plastic-waste-violin}
-# insert code here
+ggplot(plastic_waste, aes(x = continent, y = plastic_waste_per_cap))+
+  geom_violin()
 ```
 
-Réponse à la question...
+Les box-plots montrent seulement où se trouvent la majorité, alors que les violins montrent une meilleure répartition de la population.
 
 ### Exercise 4
 

@@ -42,29 +42,50 @@ ggplot(plastic_waste, aes(x = plastic_waste_per_cap, color = continent, fill = c
 
 ![](lab-02_files/figure-gfm/plastic-waste-density-1.png)<!-- -->
 
-Réponse à la question…
+color et fill se trouve dans aes, car ils sont directement inpactés par
+les variables du graphique. alpha se trouve dans geom, car il affecte
+l’allure générale du graphique et il n’est pas relier à une variable en
+particulier.
 
 ### Exercise 3
 
 Boxplot:
 
 ``` r
-# insert code here
+ggplot(plastic_waste, aes(x = continent, y = plastic_waste_per_cap))+
+  geom_boxplot()
 ```
+
+![](lab-02_files/figure-gfm/plastic-waste-boxplot-1.png)<!-- -->
 
 Violin plot:
 
 ``` r
-# insert code here
+ggplot(plastic_waste, aes(x = continent, y = plastic_waste_per_cap))+
+  geom_violin()
 ```
 
-Réponse à la question…
+![](lab-02_files/figure-gfm/plastic-waste-violin-1.png)<!-- -->
+
+Les box-plots montrent seulement où se trouvent la majorité, alors que
+les violins montrent une meilleure répartition de la population.
 
 ### Exercise 4
 
 ``` r
-# insert code here
+ggplot(plastic_waste, aes(x = plastic_waste_per_cap, y = mismanaged_plastic_waste_per_cap, color = continent))+
+  geom_point()
 ```
+
+![](lab-02_files/figure-gfm/plastic-waste-mismanaged-1.png)<!-- -->
+
+``` r
+ggplot(plastic_waste, aes(x = plastic_waste_per_cap, y = mismanaged_plastic_waste_per_cap, color = continent))+
+  geom_point()+
+  facet_wrap(~continent)
+```
+
+![](lab-02_files/figure-gfm/plastic-waste-mismanaged-2.png)<!-- -->
 
 Réponse à la question…
 

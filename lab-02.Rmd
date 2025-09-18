@@ -65,7 +65,11 @@ Les box-plots montrent seulement où se trouvent la majorité, alors que les vio
 
 
 ```{r plastic-waste-mismanaged}
-# insert code here
+ggplot(plastic_waste, aes(x = plastic_waste_per_cap, y = mismanaged_plastic_waste_per_cap, color = continent))+
+  geom_point()
+ggplot(plastic_waste, aes(x = plastic_waste_per_cap, y = mismanaged_plastic_waste_per_cap, color = continent))+
+  geom_point()+
+  facet_wrap(~continent)
 ```
 
 Réponse à la question...
